@@ -224,7 +224,7 @@ export default function Home() {
       <div className="container">
         <header>
           <div className="header-top">
-            <h1>2024–2025 Eğitim Yılı</h1>
+            <h1>2025–2026 Eğitim Yılı</h1>
             <h2>Bizim Güzel Sınıfımız</h2>
             <div className="view-switcher">
               <button
