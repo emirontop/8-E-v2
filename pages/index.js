@@ -272,12 +272,15 @@ export default function Home() {
         </section>
       </main>
 
-      <footer>
-        <div className="footer-content">
-          <p>Bu siteyi emir adlı deli çocuk yaptı </p>
-          <div className="class-name">8-E Sınıfı</div>
-        </div>
-      </footer>
+      // Footer bileşeninin içine ekleyin
+<footer>
+  <div className="footer-content">
+    <p>Bu siteyi emir adlı deli çocuk yaptı</p>
+    <div className="class-name">8-E Sınıfı</div>
+    {/* Bu satırı ekleyin */}
+    <div className="creation-info">14 Temmuz 2025'te 8-E sınıfı için yapıldı</div>
+  </div>
+</footer>
 
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
@@ -581,7 +584,29 @@ export default function Home() {
             text-align: center;
             width: 100%;
           }
-          
+          /* CSS kısmına bu stil kurallarını ekleyin */
+.creation-info {
+  font-size: 0.9rem;
+  color: #adb5bd;
+  margin-top: 8px;
+  font-style: italic;
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
+footer {
+  position: relative; /* Bu satırı ekleyin */
+}
+
+/* Responsive tasarım için medya sorgularına bu eklemeyi yapın */
+@media (max-width: 768px) {
+  .creation-info {
+    position: static;
+    text-align: center;
+    margin-top: 15px;
+  }
+}
           .view-switcher {
             width: 100%;
             justify-content: center;
