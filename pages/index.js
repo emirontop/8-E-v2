@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
 const studentsData = [
-{
+  // Öğrenci verileri burada aynı kaldı
+    {
     id: 0,
     name: "Ceylin",
     comment: ":D ==>",
@@ -163,12 +164,10 @@ const studentsData = [
     comment: "hafif küfürbaz çocuk ama çok iyi ",
     img: "/Rr.png"
   },
-  
-  
 ];
 
 const teachersData = [
-  {
+{
     id: 100,
     name: "Berna hoca",
     comment: "yerine otur yunus",
@@ -224,14 +223,9 @@ export default function Home() {
     <div className="app">
       <div className="container">
         <header>
-          <div className="header-content">
+          <div className="header-top">
             <h1>2024–2025 Eğitim Yılı</h1>
             <h2>Bizim Güzel Sınıfımız</h2>
-            <p>
-              Birbirinden <strong>özel</strong> öğrencilerimizi ve{" "}
-              <strong>değerli</strong> öğretmenlerimizi tanıyalım.
-            </p>
-
             <div className="view-switcher">
               <button
                 className={viewMode === "students" ? "active" : ""}
@@ -239,7 +233,6 @@ export default function Home() {
               >
                 Öğrenciler
               </button>
-
               <button
                 className={viewMode === "teachers" ? "active" : ""}
                 onClick={() => setViewMode("teachers")}
@@ -248,14 +241,23 @@ export default function Home() {
               </button>
             </div>
           </div>
+          
+          <p className="intro-text">
+            Birbirinden <strong>özel</strong> öğrencilerimizi ve{" "}
+            <strong>değerli</strong> öğretmenlerimizi tanıyalım.
+          </p>
         </header>
       </div>
 
       <main>
         <h2 className="section-title">{title}</h2>
         <section className={`student-list ${show ? "visible" : ""}`}>
-          {currentData.map((person) => (
-            <article key={person.id} className="student-card">
+          {currentData.map((person, index) => (
+            <article 
+              key={person.id} 
+              className="student-card"
+              style={{ transitionDelay: `${index * 50}ms` }}
+            >
               <div className="profile">
                 <div className="imgbox">
                   <img src={person.img} alt={person.name} loading="lazy" />
@@ -286,32 +288,33 @@ export default function Home() {
           box-sizing: border-box;
         }
 
+        body {
+          background: linear-gradient(to bottom, #f0f2f5, #e4e7eb);
+          font-family: 'Nunito', sans-serif;
+        }
+
         .app {
           min-height: 100vh;
-          background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
-          font-family: 'Nunito', sans-serif;
           display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 20px;
+          flex-direction: column;
+          padding: 0;
         }
 
         .container {
           width: 100%;
           max-width: 1200px;
-          background: white;
-          border-radius: 20px;
-          overflow: hidden;
-          box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+          margin: 0 auto;
         }
 
         header {
           background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
           color: white;
-          padding: 40px 20px;
+          padding: 25px 20px;
           text-align: center;
           position: relative;
           overflow: hidden;
+          border-radius: 0 0 20px 20px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
         header::before {
@@ -327,88 +330,101 @@ export default function Home() {
           z-index: 0;
         }
 
-        .header-content {
+        .header-top {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 1200px;
+          margin: 0 auto 15px;
           position: relative;
           z-index: 1;
-          max-width: 800px;
-          margin: 0 auto;
         }
 
         header h1 {
-          font-size: 3rem;
+          font-size: 2.2rem;
           font-weight: 700;
-          margin-bottom: 5px;
-          letter-spacing: 1px;
+          letter-spacing: 0.5px;
           text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+          margin-bottom: 5px;
+          text-align: left;
+          flex: 1;
         }
 
         header h2 {
-          font-size: 2.2rem;
+          font-size: 1.8rem;
           font-weight: 600;
-          margin-bottom: 15px;
           color: #ffde7d;
+          text-align: left;
+          flex: 1;
         }
 
-        header p {
-          font-size: 1.3rem;
+        .intro-text {
+          font-size: 1.15rem;
           font-weight: 300;
-          max-width: 600px;
+          max-width: 800px;
           margin: 0 auto;
           opacity: 0.9;
-          margin-bottom: 10px;
+          padding-top: 10px;
+          position: relative;
+          z-index: 1;
         }
 
         .view-switcher {
           display: flex;
-          justify-content: center;
-          gap: 15px;
-          margin-top: 25px;
+          gap: 12px;
+          margin-top: 5px;
         }
 
         .view-switcher button {
-          background: rgba(255, 255, 255, 0.2);
-          border: 2px solid white;
+          background: rgba(255, 255, 255, 0.15);
+          border: 2px solid rgba(255, 255, 255, 0.4);
           color: white;
-          padding: 12px 30px;
+          padding: 10px 20px;
           border-radius: 50px;
-          font-size: 1.1rem;
+          font-size: 1rem;
           font-weight: 600;
           cursor: pointer;
           transition: all 0.3s ease;
           backdrop-filter: blur(5px);
+          min-width: 120px;
         }
 
         .view-switcher button:hover {
-          background: rgba(255, 255, 255, 0.3);
-          transform: translateY(-3px);
+          background: rgba(255, 255, 255, 0.25);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
         .view-switcher button.active {
           background: white;
           color: #6a11cb;
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          border-color: white;
         }
 
         main {
           padding: 40px 20px;
           background: #f8f9fa;
+          flex: 1;
         }
 
         .section-title {
           text-align: center;
-          font-size: 2rem;
+          font-size: 2.2rem;
           color: #343a40;
-          margin-bottom: 30px;
+          margin-bottom: 35px;
           position: relative;
+          font-weight: 700;
         }
 
         .section-title::after {
           content: "";
           display: block;
-          width: 80px;
+          width: 100px;
           height: 4px;
-          background: #6a11cb;
-          margin: 10px auto;
+          background: linear-gradient(90deg, #6a11cb, #2575fc);
+          margin: 12px auto;
           border-radius: 2px;
         }
 
@@ -419,8 +435,8 @@ export default function Home() {
           max-width: 1200px;
           margin: 0 auto;
           opacity: 0;
-          transform: translateY(30px);
-          transition: all 0.8s ease;
+          transform: translateY(20px);
+          transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .student-list.visible {
@@ -432,36 +448,46 @@ export default function Home() {
           background: white;
           border-radius: 18px;
           overflow: hidden;
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-          transition: all 0.3s ease;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+          transition: all 0.4s ease;
           border: 1px solid #f0f0f0;
+          opacity: 0;
+          transform: translateY(15px);
+          animation: fadeInUp 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
         .student-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
         }
 
         .profile {
           display: flex;
-          padding: 25px;
+          padding: 22px;
         }
 
         .imgbox {
-          width: 100px;
-          height: 100px;
+          width: 90px;
+          height: 90px;
           border-radius: 50%;
           overflow: hidden;
-          border: 4px solid #f0f0f0;
+          border: 4px solid #f8f9fa;
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
           flex-shrink: 0;
           margin-right: 20px;
-          transition: all 0.3s ease;
+          transition: all 0.4s ease;
         }
 
         .student-card:hover .imgbox {
           border-color: #6a11cb;
-          transform: scale(1.05);
+          transform: scale(1.08);
         }
 
         .imgbox img {
@@ -469,6 +495,11 @@ export default function Home() {
           height: 100%;
           object-fit: cover;
           display: block;
+          transition: transform 0.4s ease;
+        }
+
+        .student-card:hover .imgbox img {
+          transform: scale(1.1);
         }
 
         .info {
@@ -478,15 +509,20 @@ export default function Home() {
           justify-content: center;
         }
 
-        h2 {
-          font-size: 1.6rem;
+        .info h2 {
+          font-size: 1.5rem;
           font-weight: 700;
           color: #343a40;
-          margin-bottom: 10px;
+          margin-bottom: 8px;
+          transition: color 0.3s ease;
         }
 
-        p {
-          font-size: 1.05rem;
+        .student-card:hover .info h2 {
+          color: #6a11cb;
+        }
+
+        .info p {
+          font-size: 0.98rem;
           line-height: 1.6;
           color: #495057;
           font-style: italic;
@@ -494,12 +530,12 @@ export default function Home() {
           padding-left: 15px;
         }
 
-        p::before {
-          content: "";
+        .info p::before {
+          content: "“";
           position: absolute;
           top: -10px;
           left: 0;
-          font-size: 3rem;
+          font-size: 2.5rem;
           color: #6a11cb;
           opacity: 0.2;
           font-family: serif;
@@ -508,8 +544,10 @@ export default function Home() {
         footer {
           background: #343a40;
           color: white;
-          padding: 30px 20px;
+          padding: 25px 20px;
           text-align: center;
+          border-radius: 20px 20px 0 0;
+          margin-top: 40px;
         }
 
         .footer-content {
@@ -518,32 +556,69 @@ export default function Home() {
         }
 
         .footer-content p {
-          font-size: 1.1rem;
-          margin-bottom: 15px;
+          font-size: 1.05rem;
+          margin-bottom: 12px;
           color: #e9ecef;
           font-style: normal;
           padding-left: 0;
         }
 
-        .footer-content p::before {
-          display: none;
-        }
-
         .class-name {
-          font-size: 1.3rem;
+          font-size: 1.25rem;
           font-weight: 600;
           color: #ffde7d;
           letter-spacing: 1px;
         }
 
         @media (max-width: 768px) {
-          /* ... medya sorguları ... */
+          .header-top {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+          }
+          
+          header h1, header h2 {
+            text-align: center;
+            width: 100%;
+          }
+          
+          .view-switcher {
+            width: 100%;
+            justify-content: center;
+          }
+          
+          .section-title {
+            font-size: 1.9rem;
+          }
         }
 
         @media (max-width: 480px) {
-          /* ... medya sorguları ... */
+          header h1 {
+            font-size: 1.9rem;
+          }
+          
+          header h2 {
+            font-size: 1.5rem;
+          }
+          
+          .view-switcher {
+            flex-direction: column;
+            align-items: center;
+          }
+          
+          .view-switcher button {
+            width: 100%;
+          }
+          
+          .student-list {
+            grid-template-columns: 1fr;
+          }
+          
+          .profile {
+            padding: 18px;
+          }
         }
       `}</style>
     </div>
   );
-                  }
+}
