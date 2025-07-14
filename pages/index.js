@@ -272,7 +272,7 @@ export default function Home() {
         </section>
       </main>
 
-      // Footer bileşeninin içine ekleyin
+      
 <footer>
   <div className="footer-content">
     <p>Bu siteyi emir adlı deli çocuk yaptı</p>
