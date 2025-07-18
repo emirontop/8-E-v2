@@ -107,7 +107,7 @@ const studentsData = [
   {
     id: 17,
     name: "Feyza",
-    comment: "(DÜZENLE)",
+    comment: "FEYZULLAH",
     img: "/Feyza.png"
   },
   {
