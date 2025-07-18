@@ -120,7 +120,7 @@ const studentsData = [
     id: 19,
     name: "Cengiz",
     comment: "Bieiklet hastası",
-    img: "/Feyza.png"
+    img: "/Cengiz.png"
   },
   {
     id: 20,
@@ -132,7 +132,7 @@ const studentsData = [
     id: 21,
     name: "ülkü",
     comment: "(kotu bisey yazarsam kizar o yüzden cevap beklicem )",
-    img: "/Feyza.png"
+    img: "/Ülkü.png"
   },
   {
     id: 22,
@@ -144,7 +144,7 @@ const studentsData = [
     id: 23,
     name: "Nildağ",
     comment: "bilmiyorum 4 göz v2?",
-    img: "/Feyza.png"
+    img: "/Nildağ.png"
   },
   {
     id: 24,
