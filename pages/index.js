@@ -279,7 +279,8 @@ export default function Home() {
     <div className="class-name">8-E Sınıfı</div>
     {/* Bu satırı ekleyin */}
     <div className="creation-info">14 Temmuz 2025'te 8-E sınıfı için yapıldı</div>
-  </div>
+  Açıkçası üşendiğim için gui ekledim. changelog: İzin olmayanlar blurlandı
+      </div>
 </footer>
 
       <style jsx>{`
@@ -647,5 +648,3 @@ footer {
     </div>
   );
 }
-açıkçası üşendim buraya özel gui eklemek için,
-  izin alınmayan kişiler blurlandi.
