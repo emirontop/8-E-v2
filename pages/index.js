@@ -279,7 +279,7 @@ export default function Home() {
     <div className="class-name">8-E Sınıfı</div>
     {/* Bu satırı ekleyin */}
     <div className="creation-info">14 Temmuz 2025'te 8-E sınıfı için yapıldı</div>
-  Açıkçası üşendiğim için gui ekledim. changelog: İzin olmayanlar blurlandı
+  changelog: İzin olmayanların isimleri blurlandı...
       </div>
 </footer>
 
