@@ -4,8 +4,8 @@ const studentsData = [
   // Öğrenci verileri burada aynı kaldı
     {
     id: 0,
-    name: "Ceylin",
-    comment: ":D ==>",
+    name: "Ce####",
+    comment: "Açıkçası bilmiyorum",
     img: "/Ceylin.png"
   },
   {
@@ -58,13 +58,13 @@ const studentsData = [
   },
   {
     id: 9,
-    name: "Medet",
-    comment: "Medet♥️Sinem",
+    name: "Me###",
+    comment: "Me###♥️Sinem",
     img: "/Medet.png"
   },
   {
     id: 10,
-    name: "İbo/İbrahim",
+    name: "İbo",
     comment: "Futbolcu babapiro",
     img: "/İbrahim.png"
   },
@@ -82,19 +82,19 @@ const studentsData = [
   },
   {
     id: 13,
-    name: "Ece",
+    name: "Ec#",
     comment: "(EKLE)",
     img: "/Ece.png"
   },
   {
     id: 14,
-    name: "Eflal",
+    name: "Ef###",
     comment: "Koyu MRT li",
     img: "/Eflal.png"
   },
   {
     id: 15,
-    name: "enes",
+    name: "Enes",
     comment: "Basık tofaş",
     img: "/Enes.png"
   },
@@ -112,7 +112,7 @@ const studentsData = [
   },
   {
     id: 18,
-    name: "Berra",
+    name: "Be###",
     comment: "(burayada bisey eklicez)",
     img: "/berra.png"
   },
@@ -130,31 +130,31 @@ const studentsData = [
   },
   {
     id: 21,
-    name: "ülkü",
+    name: "ül##",
     comment: "(kotu bisey yazarsam kizar o yüzden cevap beklicem )",
     img: "/Ülkü.png"
   },
   {
     id: 22,
-    name: "İlayda",
+    name: "İl####",
     comment: "ulkunun ayinisi cevap bekliyorum.)",
     img: "/İlayda.png"
   },
   {
     id: 23,
-    name: "Nildağ",
+    name: "Ni####",
     comment: "bilmiyorum 4 göz v2?",
     img: "/Nildağ.png"
   },
   {
     id: 24,
-    name: "Beren",
+    name: "Be###",
     comment: "1.35",
     img: "/Beren.png"
   },
   {
     id: 25,
-    name: "Gökçen",
+    name: "Gö####",
     comment: "(BURAYI DUZENLE)",
     img: "/Gökçen.png"
   },
@@ -169,31 +169,31 @@ const studentsData = [
 const teachersData = [
 {
     id: 100,
-    name: "Berna hoca",
+    name: "Be### hoca",
     comment: "yerine otur yunus",
     img: "/math-teacher.png"
   },
   {
     id: 101,
-    name: "Serap Hoca",
+    name: "Se### Hoca",
     comment: "Emir eksi aldın",
     img: "/turkish-teacher.png"
   },
   {
     id: 102,
-    name: "Veli hoca",
+    name: "Ve## hoca",
     comment: "Sözlünüze 30 girerim bakın",
     img: "/science-teacher.png"
   },
   {
     id: 103,
     name: "Fatih hoca",
-    comment: "Görüp görebileceğiniz en iyi ingilizce hocası",
+    comment: "Görüp görebileceğiniz en iyi ingilizce hoca 👑",
     img: "/english-teacher.png"
   },
   {
     id: 105,
-    name: " Ayşegül hoca ",
+    name: " Ay##### hoca ",
     comment: "Oğlum malzemen nerede?",
     img: "/music-teacher.png"
 
@@ -201,7 +201,7 @@ const teachersData = [
   
   {
     id: 106,
-    name: "Esin Hoca",
+    name: "Es## Hoca",
     comment: "OĞLUMMMM- KIZIIIMMMM-",
     img: "/music-teacher.png"
 
@@ -647,3 +647,5 @@ footer {
     </div>
   );
 }
+açıkçası üşendim buraya özel gui eklemek için,
+  izin alınmayan kişiler blurlandi.
